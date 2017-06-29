@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <div class="col-md-1" ng-if="$ctrl.onAdd">
+                <button type="button" class="btn btn-primary form-control" ng-click="$ctrl.add()"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add</button>
+            </div>
+            <div ng-class="{'col-md-11': $ctrl.onAdd, 'col-md-12': !$ctr.onAdd}">
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                    <input type="search" name="" id="input1/(\w+)/\u\1/g" class="form-control" placeholder="Search" ng-model="$ctrl.searchString"
+                        ng-change="$ctrl.applyFilters()" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped ">
+                <thead>
+                    <tr>
+                        <th ng-if="$ctrl.onSave" class='col-xs-1'></th>
+                        <th class='col-xs-2' ng-repeat="key in $ctrl.model" ng-click="$ctrl.sortType = key.name; $ctrl.reverseOrder = !$ctrl.reverseOrder; $ctrl.applyFilters();">{{key.displayName}}&nbsp;<span ng-show="$ctrl.sortType === key.name" class='fa' ng-class='{"fa-caret-down": $ctrl.reverseOrder, "fa-caret-up": !$ctrl.reverseOrder}'></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in $ctrl.activeItems" ng-style="{'cursor': $ctrl.onItemClick ? 'pointer' : 'auto'}" ng-click="$ctrl.onItemClick(item)">
+                        <td ng-if="$ctrl.onSave"><button type="button" class="btn btn-default" ng-click="$ctrl.edit(item)">Edit</button></td>
+                        <td ng-repeat="key in $ctrl.model" class="pagination-center">
+                            <img class='img-responsive' style="max-height: 150px; max-width: 100px;" ng-if="key.isImage" ng-src="{{item[key.name]}}"
+                                spinkit-image-preloader="circle-spinner" />
+                            <span ng-if="!key.isImage">{{item[key.name]}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div align="center">
+            <ul uib-pagination ng-model="$ctrl.currentPage" ng-change="$ctrl.setPagingData($ctrl.currentPage)" total-items="$ctrl.totalItems"
+                items-per-page="10" num-pages="$ctrl.numPages" boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;"
+                first-text="&laquo;" last-text="&raquo;">
+            </ul>
+        </div>
+    </div>
+</div>

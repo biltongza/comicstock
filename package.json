@@ -1,0 +1,45 @@
+{
+  "name": "comicstock",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node ./bin/www",
+    "debug": "node --nolazy --debug=5858 ./bin/www",
+    "test": "karma start"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "~1.0.3",
+    "angular": "~1.6.4",
+    "angular-animate": "~1.6.4",
+    "angular-camelcase-to-human": "^1.0.0",
+    "angular-resource": "~1.6.4",
+    "angular-route": "~1.6.4",
+    "angular-spinkit": "^0.3.4",
+    "angular-ui-bootstrap": "~2.5.0",
+    "angular-ui-router-uib-modal": "~0.0.11",
+    "body-parser": "~1.17.1",
+    "bootstrap": "~3.3.7",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "font-awesome": "~4.7.0",
+    "jquery": "~3.2.1",
+    "method-override": "~2.3.9",
+    "morgan": "~1.8.1",
+    "oclazyload": "~1.1.0",
+    "serve-favicon": "~2.4.2",
+    "toastr": "~2.1.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.6.4",
+    "eslint": "~3.19.0",
+    "eslint-plugin-angular": "~2.5.0",
+    "jasmine-core": "~2.6.2",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
+    "nodemon": "^1.11.0",
+    "protractor": "~5.1.2"
+  }
+}

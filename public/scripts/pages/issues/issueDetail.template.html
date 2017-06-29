@@ -1,0 +1,55 @@
+<circle-spinner ng-if="$ctrl.loading" class="loading-panel-spinner"></circle-spinner>
+<div class="modal-content" ng-if="!$ctrl.loading">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$ctrl.ok()" data-dismiss="modal"><span>&times;</span></button>
+    <h4 class="modal-title">{{$ctrl.item.title}}</h4>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <a ng-href="{{$ctrl.item.image}}"><img class="img-responsive center-block" ng-src="{{$ctrl.item.image}}" /></a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            {{$ctrl.item.description}}
+          </div>
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="row">
+          <div ng-if="$ctrl.item.seriesNumber >= 0">
+            <div class="col-md-6">
+              <b>Series Number:</b>
+            </div>
+            <div class="col-md-6">
+              {{$ctrl.item.seriesNumber}}:
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6"><b>Publisher:</b></div>
+          <div class="col-md-6">{{$ctrl.item.publisher}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6"><b>Publication Date:</b></div>
+          <div class="col-md-6">{{$ctrl.item.publicationDate}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <button type="button" class="btn btn-primary btn-block form-control" ui-sref=".Order"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-default" type="button" ng-click="$ctrl.ok()">
+      <span class="glyphicon glyphicon-ok"></span>&nbsp;
+      OK
+    </button>
+  </div>
+</div>

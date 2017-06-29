@@ -1,0 +1,10 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="$ctrl.close()" data-dismiss="modal"><span>&times;</span></button>
+  <h4 class="modal-title">{{$ctrl.header}}</h4>
+</div>
+<div class="modal-body">{{$ctrl.message}}</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-danger" ng-click="$ctrl.close()"><span class="glyphicon glyphicon-remove"></span>&nbsp;No</button>
+<button type="button" class="btn btn-default" ng-click="$ctrl.close()"><span class="glyphicon glyphicon-ban-circle"></span>&nbsp;Cancel</button>
+<button type="button" class="btn btn-primary" ng-click="$ctrl.confirm()"><span class="glyphicon glyphicon-ok"></span>&nbsp;Yes</button>
+</div>

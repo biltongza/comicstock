@@ -1,0 +1,30 @@
+<circle-spinner ng-if="$ctrl.loading" class="loading-panel-spinner"></circle-spinner>
+<div class="modal-content" ng-if="!$ctrl.loading">
+  
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$ctrl.close()" data-dismiss="modal"><span>&times;</span></button>
+    <h4 class="modal-title">Edit item</h4>
+  </div>
+  <div class="modal-body container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <div class="row" ng-repeat="prop in $ctrl.model">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label ng-attr-for="{{'input' + prop.name}}">{{prop.displayName}}</label>
+                <input type="text" name="" ng-attr-id="{{'input' + prop.name}}" class="form-control" ng-model="$ctrl.item[prop.name]" required="required"
+                  pattern="" title="" placeholder="{{prop.displayName}}"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button ng-show="$ctrl.showDelete" type="button" class="btn btn-danger" ng-click="$ctrl.delete($ctrl.item)"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</button>
+    <button type="button" class="btn btn-default" ng-click="$ctrl.close()" data-dismiss="modal"><span class="glyphicon glyphicon-ban-circle"></span>&nbsp;Cancel</button>
+    <button type="button" class="btn btn-primary" ng-click="$ctrl.save($ctrl.item)"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;Save changes</button>
+  </div>
+</div>

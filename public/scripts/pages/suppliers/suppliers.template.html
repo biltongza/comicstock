@@ -1,0 +1,8 @@
+<circle-spinner ng-if="$ctrl.loading" class="loading-panel-spinner"></circle-spinner>
+<div ng-if="!$ctrl.loading && $ctrl.items.length === 0" class="jumbotron">
+  <div class="container">
+    <h1>No suppliers!</h1>
+    <p>Where do we get the comics from then?</p>
+  </div>
+</div>
+<crud-list ng-if="$ctrl.items.length > 0" items="$ctrl.items" display="$ctrl.display" on-add="$ctrl.add" model="$ctrl.model" primary-key="id" item-state="Supplier" on-item-click="$ctrl.onItemClick"></crud-list>
