@@ -15,10 +15,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'node_modules/jquery/dist/jquery.js',
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/angular-resource/angular-resource.js',
       'node_modules/angular-route/angular-route.js',
+      'node_modules/@uirouter/angularjs/release/angular-ui-router.js',
+      'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+      'node_modules/angular-spinkit/build/angular-spinkit.js',
+      'node_modules/angular-ui-router-uib-modal/angular-ui-router-uib-modal.js',
+
       'public/scripts/**/*.module.js',
       'public/scripts/**/*.component.js',
       'public/scripts/**/*.service.js',
@@ -63,6 +69,7 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome', 'Firefox'],
+    //browsers: ['ChromeDebugging'],
 
 
     // Continuous Integration mode
@@ -76,6 +83,13 @@ module.exports = function(config) {
       'karma-chrome-launcher',
       'karma-firefox-launcher',
       'karma-jasmine'
-    ]
+    ],
+
+    customLaunchers: {
+      ChromeDebugging: {
+        base: 'Chrome',
+        flags: ['--remote-debugging-port=9333']
+      }
+    }
   })
 }
