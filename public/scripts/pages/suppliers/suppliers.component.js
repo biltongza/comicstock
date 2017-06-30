@@ -39,7 +39,7 @@
         };
 
         function OnItemClick(supplier) {
-            $state.go('.Supplier', { 
+            return $state.go('.Supplier', { 
                 supplierId: supplier.id, 
                 model: $ctrl.model, 
                 onSave: $ctrl.save, 
@@ -49,12 +49,12 @@
 
         function HandleSuccess() {
             toastr.success('Success');
-            RefreshSuppliers();
+            return RefreshSuppliers();
         }
 
         function HandleRejection(reason) {
             toastr.error(reason, 'Something went wrong');
-            RefreshSuppliers();
+            return RefreshSuppliers();
         }
 
         function RefreshSuppliers() {
