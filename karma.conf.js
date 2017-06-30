@@ -26,6 +26,7 @@ module.exports = function(config) {
       'node_modules/angular-ui-router-uib-modal/angular-ui-router-uib-modal.js',
       'node_modules/oclazyload/dist/ocLazyLoad.js',
       'node_modules/angular-camelcase-to-human/camelcase-browser.js',
+      'node_modules/toastr/build/toastr.min.js',
       'public/scripts/**/*.module.js',
       'public/scripts/**/*.config.js',
       'public/scripts/**/*.component.js',
