@@ -10,10 +10,6 @@
 
     function IssueGridController(Issues, $uibModal, $state) {
         let $ctrl = this;
-
-        $ctrl.save = Save;
-        $ctrl.delete = Delete;
-        $ctrl.add = Add;
         $ctrl.onItemClick = OnItemClick;
         $ctrl.loading = true;
 
@@ -48,9 +44,6 @@
             toastr.error('Server returned ' + reason.status + ': ' + reason.data.exceptionMessage, 'Error loading data!');
         };
 
-        function Save(issue) { return Issues.update(issue, RefreshIssues); };
-        function Delete(issue) { return Issues.delete(issue, RefreshIssues); };
-        function Add(issue) { return Issues.save(issue, RefreshIssues); };
         function OnItemClick(issue) {
             $state.go('.Issue', {issueId: issue.id});
         };
