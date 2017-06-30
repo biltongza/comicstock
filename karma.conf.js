@@ -30,7 +30,9 @@ module.exports = function(config) {
       'public/scripts/**/*.config.js',
       'public/scripts/**/*.component.js',
       'public/scripts/**/*.service.js',
-      'public/scripts/**/*.spec.js'
+      'public/scripts/**/*.spec.js',
+      'public/scripts/**/*.filter.js',
+      'public/scripts/constants.js'
     ],
 
 
