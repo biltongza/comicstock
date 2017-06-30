@@ -12,7 +12,7 @@
     let $ctrl = this;
     $ctrl.loading = true;
     $ctrl.items = [];
-    $ctrl.$onInit = OnInit;
+
     $ctrl.model = [
       { name: 'id', isImage: false, displayName: 'ID' },
       { name: 'total', isImage: false, displayName: 'Total' },
@@ -21,15 +21,13 @@
       { name: "shipmentReference", isImage: false, displayName: 'Shipment Reference' },
       { name: "shipmentDate", isImage: false, displayName: "Shipment Date" }
     ];
+    $q.when(Orders.query().$promise, function (orders) {
+      $ctrl.items = orders.map(MapItem);
 
-    function OnInit() {
-      $q.when(Orders.query().$promise, function (orders) {
-        $ctrl.items = orders.map(MapItem);
+    }).finally(function () {
+      $ctrl.loading = false;
+    });
 
-      }).finally(function () {
-        $ctrl.loading = false;
-      });
-    }
     function MapItem(item) {
       return {
         id: item.id,
