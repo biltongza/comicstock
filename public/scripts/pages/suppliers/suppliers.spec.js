@@ -3,7 +3,7 @@ describe('Supplier component', function () {
 
   beforeEach(function () {
     module('comicStock.pages');
-    module('comicStock.services');
+    
   });
 
   describe('controller', function () {
